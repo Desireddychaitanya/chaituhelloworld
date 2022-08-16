@@ -3,7 +3,7 @@ workdir /app
 copy package*.json /app
 run npm install
 copy . .
-cmd["node","index.js"]
+cmd ["node","index.js"]
 expose 5000
 
 
