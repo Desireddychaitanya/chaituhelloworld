@@ -7,7 +7,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-     matchlabels:
+     matchLabels:
        app: nginx
   strategy:
      type: Recreate
@@ -18,14 +18,14 @@ spec:
      spec:
       containers:
       - name: nginx
-        image: 915451327550.dkr.ecr.us-east-2.amazonaws.com/dev:36
-      ports:
-      - containerPort: 80
-      resources:
-          limits:
-            cpu: 500m
-          requests:
-            cpu: 200m     
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+        resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m     
 ---
 apiversion: apps/v1
 kind: service
@@ -37,8 +37,8 @@ spec:
   ports:
     - protocol: TCP
       port : 80
-      targetport: 9376
-  type: loadbalancer    
+      targetPort: 80
+  type: LoadBalancer    
 
 
 
