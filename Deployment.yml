@@ -1,4 +1,4 @@
-apiversion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
    name: nginx-deployment
@@ -18,7 +18,7 @@ spec:
      spec:
       containers:
       - name: nginx
-        image: nginx:1.14.2
+        image: 915451327550.dkr.ecr.us-east-2.amazonaws.com/dev:36
       ports:
       - containerPort: 80
       resources:
